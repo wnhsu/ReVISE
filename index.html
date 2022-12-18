@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="ReVISE">
+  <meta property="og:title" content="ReVISE"/>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">    
+  
+  <title>ReVISE</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/audio-table.css">
+  <link rel="stylesheet" type="text/css" href="static/css/dropdown_style.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">ReVISE: Self-Supervised Speech Resynthesis with Visual Input for Universal and Generalized Speech Enhancement</h1>
+            <div class="is-size-5 publication-authors">              
+              <span class="author-block">
+                <a href="">Wei-Ning Hsu<sup>1</sup>,</a>
+                <a href="">Tal Remez<sup>1</sup>,</a>
+                <a href="">Bowen Shi<sup>1,3</sup>,</a>
+                <a href="">Jacob Donley<sup>2</sup>,</a>
+                <a href="">Yossi Adi<sup>1,4</sup></a>
+                <br>
+                <sup>1</sup>FAIR, Meta AI Research, <sup>2</sup>Meta Reality Labs Research, <br>
+                <sup>3</sup>Toyota Technological Institute at Chicago, <sup>4</sup>The Hebrew University of Jerusalem <br>
+                <tt>{wnhsu,talr,bshi,jdonley,adiyoss}@meta.com</tt>
+                <br>
+                <a href="">[paper]</a>
+                <a href="https://github.com/facebookresearch/av_hubert">[code]</a>
+
+              </span>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <div class="grid-container">
+                    <div class="grid-item">            
+                      <img src="static/images/model2.png"/>                
+                    </div>
+                    <div class="grid-item">            
+                      <img src="static/images/illustration2.png" width=550/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+	  
+	  <section class="section hero is-light">
+	    <div class="container is-max-desktop">
+	      <!-- Abstract. -->
+	      <div class="columns is-centered has-text-centered">
+		<div class="column is-four-fifths">
+		  <h2 class="title is-3">Abstract</h2>
+		  <div class="content has-text-justified">
+		    <p>
+		      Prior works on improving speech quality with visual input typically study each type of auditory distortion separately (e.g., separation, inpainting, video-to-speech) and present tailored algorithms. This paper proposes to unify these subjects and study Generalized Speech Enhancement, where the goal is not to reconstruct the exact reference clean signal, but to focus on improving certain aspects of speech. In particular, this paper concerns intelligibility, quality, and video synchronization. We cast the problem as audio-visual speech resynthesis, which is composed of two steps: pseudo audio-visual speech recognition (P-AVSR) and pseudo text-to-speech synthesis (P-TTS). P-AVSR and P-TTS are connected by discrete units derived from a self-supervised speech model. Moreover, we utilize self-supervised audio-visual speech model to initialize P-AVSR. The proposed model is coined ReVISE. ReVISE is the first high-quality model for in-the-wild video-to-speech synthesis and achieves superior performance on all LRS3 audio-visual enhancement tasks with a single model. To demonstrates its applicability in the real world, ReVISE is also evaluated on EasyCom, an audio-visual benchmark collected under challenging acoustic conditions with only 1.6 hours of training data. Similarly, ReVISE greatly suppresses noise and improves quality.
+		    </p>
+		  </div>
+		</div>
+	      </div>
+	      <!--/ Abstract. -->
+	    </div>
+	  </section>
+
+
+	  <section class="hero">
+	    <div class="hero-body">
+	      <div class="container">
+		<h2 class="title is-3">Real-world noisy ego-centric recordings from <a href="https://github.com/facebookresearch/EasyComDataset", targer="_blank">EasyCom</a> dataset.</h2>
+		EasyCom contains ego-centric videos samples recorded from glasses with an audio-array and a camera. 
+		The audio contains significant amount of background noise and overlapping speech. Hence the task of enhancement requires both denoising and separation.
+		The following samples are drawn from the ReVISE model trained on EasyCom.
+
+		<div class="grid-container">
+
+		  <div class="grid-item">
+		    Input audio (distant mic)   
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_12/Session_12_00-00-000_000004_distant_ch2.mp4" type="video/mp4">
+		    </video>
+		    Ref. audio (close mic)
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_12/Session_12_00-00-000_000004_close.mp4" type="video/mp4">
+		    </video>
+		    Beamformed audio
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_12/Session_12_00-00-000_000004_distant_bf.mp4" type="video/mp4">
+		    </video>
+		    <b>Beamformed audio + ReVISE (ours)</b>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_12/Session_12_00-00-000_000004_model_revise_bf.mp4" type="video/mp4">
+		    </video>
+		  </div>
+
+		  <div class="grid-item">            
+		    <br>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_4/Session_4_01-00-293_000011_distant_ch2.mp4" type="video/mp4">
+		    </video>
+		    <br>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_4/Session_4_01-00-293_000011_close.mp4" type="video/mp4">
+		    </video>
+		    <br>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_4/Session_4_01-00-293_000011_distant_bf.mp4" type="video/mp4">
+		    </video>
+		    <br>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_4/Session_4_01-00-293_000011_model_revise_bf.mp4" type="video/mp4">
+		    </video>
+		  </div>
+
+		  <div class="grid-item">            
+		    <br>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_4/Session_4_22-00-570_000021_distant_ch2.mp4" type="video/mp4">
+		    </video>
+		    <br>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_4/Session_4_22-00-570_000021_close.mp4" type="video/mp4">
+		    </video>
+		    <br>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_4/Session_4_22-00-570_000021_distant_bf.mp4" type="video/mp4">
+		    </video>
+		    <br>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/easycom/Session_4/Session_4_22-00-570_000021_model_revise_bf.mp4" type="video/mp4">
+		    </video>
+		  </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+	  <section class="hero">
+	    <div class="hero-body">
+	      <div class="container">
+		<h2 class="title is-3">Video-to-speech synthesis with in-the-wild samples</h2>
+		We evaluate our universal ReVISE model trained on LRS3 with samples from the <a href="https://ai.facebook.com/blog/ai-that-understands-speech-by-looking-as-well-as-hearing/">AV-HuBERT blog</a> for video-to-speech synthesis. 
+		We present samples for: (1) the input (silent) video; (2) the target audio; (3) the resynthesized audio from the discrete representation; (4) ReVISE model output. 
+		The model generalizes well to samples not drawn from the training dataset.
+		<div class="grid-container">
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+
+	  <section class="hero">
+	    <div class="hero-body">
+	      <div class="container">
+		<h2 class="title is-3">Audi-visual speech inpainting with in-the-wild samples</h2>
+		Similar to the section above, we evaluate our universal ReVISE model trained on LRS3 with samples from the <a href="https://ai.facebook.com/blog/ai-that-understands-speech-by-looking-as-well-as-hearing/">AV-HuBERT blog</a> for speech inpainting. 
+		We present samples for: (1) the input video with XX% of frames dropped; (2) the target audio; (3) ReVISE model output. 
+The model generalizes well to samples not drawn from the training dataset.
+		<div class="grid-container">
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+
+
+
+
+</body>
+</html>
+
