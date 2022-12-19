@@ -103,11 +103,11 @@
 		<div class="grid-container">
 
 		  <div class="grid-item">
-		    Input audio (distant mic)   
+		    Input video (distant mic)   
 		    <video width="300" height="300" controls>
 		      <source src="static/videos/easycom/Session_12/Session_12_00-00-000_000004_distant_ch2.mp4" type="video/mp4">
 		    </video>
-		    Ref. audio (close mic)
+		    Ref. video (close mic)
 		    <video width="300" height="300" controls>
 		      <source src="static/videos/easycom/Session_12/Session_12_00-00-000_000004_close.mp4" type="video/mp4">
 		    </video>
@@ -168,9 +168,56 @@
 	      <div class="container">
 		<h2 class="title is-3">Video-to-speech synthesis with in-the-wild samples</h2>
 		We evaluate our universal ReVISE model trained on LRS3 with samples from the <a href="https://ai.facebook.com/blog/ai-that-understands-speech-by-looking-as-well-as-hearing/">AV-HuBERT blog</a> for video-to-speech synthesis. 
-		We present samples for: (1) the input (silent) video; (2) the target audio; (3) the resynthesized audio from the discrete representation; (4) ReVISE model output. 
+		We present samples for: (1) the input (silent) video; (2) the target audio; (3) ReVISE model output. 
 		The model generalizes well to samples not drawn from the training dataset.
 		<div class="grid-container">
+
+		  <div class="grid-item">
+		    Input video (silent)   
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-empty/Scenario_1_Two_People_Clearly_Heard/Scenario_1_Clip_2_Two_People_Talking_Clearly_Heard.mp4" type="video/mp4">
+		    </video>
+		    Ref. video
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-raw/Scenario_1_Two_People_Clearly_Heard/Scenario_1_Clip_2_Two_People_Talking_Clearly_Heard.mp4" type="video/mp4">
+		    </video>
+		    <b>ReVISE (ours)</b>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/output-empty/Scenario_1_Two_People_Clearly_Heard/Scenario_1_Clip_2_Two_People_Talking_Clearly_Heard.mp4" type="video/mp4">
+		    </video>
+		  </div>
+
+
+		  <div class="grid-item">
+		    Input video (silent)   
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-empty/Scenario_2_One_person_speaking_and_noise/Scenario_2_Clip_3_one_person_speaking_and_noise_in_background__medium_level_guitar.mp4" type="video/mp4">
+		    </video>
+		    Ref. video
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-raw/Scenario_2_One_person_speaking_and_noise/Scenario_2_Clip_3_one_person_speaking_and_noise_in_background__medium_level_guitar.mp4" type="video/mp4">
+		    </video>
+		    <b>ReVISE (ours)</b>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/output-empty/Scenario_2_One_person_speaking_and_noise/Scenario_2_Clip_3_one_person_speaking_and_noise_in_background__medium_level_guitar.mp4" type="video/mp4">
+		    </video>
+		  </div>
+
+		  <div class="grid-item">
+		    Input video (silent)   
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-empty/Scenario_3__Interactive__talking_through_window/Scenario_3_Clip_2_project_due_2.mp4" type="video/mp4">
+		    </video>
+		    Ref. video
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-raw/Scenario_3__Interactive__talking_through_window/Scenario_3_Clip_2_project_due_2.mp4" type="video/mp4">
+		    </video>
+		    <b>ReVISE (ours)</b>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/output-empty/Scenario_3__Interactive__talking_through_window/Scenario_3_Clip_2_project_due_2.mp4" type="video/mp4">
+		    </video>
+		  </div>
+
 	        </div>
 	      </div>
 	    </div>
@@ -181,9 +228,56 @@
 	      <div class="container">
 		<h2 class="title is-3">Audi-visual speech inpainting with in-the-wild samples</h2>
 		Similar to the section above, we evaluate our universal ReVISE model trained on LRS3 with samples from the <a href="https://ai.facebook.com/blog/ai-that-understands-speech-by-looking-as-well-as-hearing/">AV-HuBERT blog</a> for speech inpainting. 
-		We present samples for: (1) the input video with XX% of frames dropped; (2) the target audio; (3) ReVISE model output. 
+		We present samples for: (1) the input video with 30%/50%/70% of frames dropped for the three columns from left to right; (2) the target audio; (3) ReVISE model output. 
 The model generalizes well to samples not drawn from the training dataset.
+		
 		<div class="grid-container">
+
+		  <div class="grid-item">
+		    Input video (30% frames dropped)
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-mask0.3/Scenario_1_Two_People_Clearly_Heard/Scenario_1_Clip_2_Two_People_Talking_Clearly_Heard.mp4" type="video/mp4">
+		    </video>
+		    Ref. video
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-raw/Scenario_1_Two_People_Clearly_Heard/Scenario_1_Clip_2_Two_People_Talking_Clearly_Heard.mp4" type="video/mp4">
+		    </video>
+		    <b>ReVISE (ours)</b>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/output-mask0.3/Scenario_1_Two_People_Clearly_Heard/Scenario_1_Clip_2_Two_People_Talking_Clearly_Heard.mp4" type="video/mp4">
+		    </video>
+		  </div>
+
+		  <div class="grid-item">
+		    Input video (50% frames dropped)   
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-mask0.5/Scenario_2_One_person_speaking_and_noise/Scenario_2_Clip_3_one_person_speaking_and_noise_in_background__medium_level_guitar.mp4" type="video/mp4">
+		    </video>
+		    Ref. video
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-raw/Scenario_2_One_person_speaking_and_noise/Scenario_2_Clip_3_one_person_speaking_and_noise_in_background__medium_level_guitar.mp4" type="video/mp4">
+		    </video>
+		    <b>ReVISE (ours)</b>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/output-mask0.5/Scenario_2_One_person_speaking_and_noise/Scenario_2_Clip_3_one_person_speaking_and_noise_in_background__medium_level_guitar.mp4" type="video/mp4">
+		    </video>
+		  </div>
+
+		  <div class="grid-item">
+		    Input video (70% frames dropped)   
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-mask0.7/Scenario_3__Interactive__talking_through_window/Scenario_3_Clip_2_project_due_2.mp4" type="video/mp4">
+		    </video>
+		    Ref. video
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/input-raw/Scenario_3__Interactive__talking_through_window/Scenario_3_Clip_2_project_due_2.mp4" type="video/mp4">
+		    </video>
+		    <b>ReVISE (ours)</b>
+		    <video width="300" height="300" controls>
+		      <source src="static/videos/avhubert_demo/output-mask0.7/Scenario_3__Interactive__talking_through_window/Scenario_3_Clip_2_project_due_2.mp4" type="video/mp4">
+		    </video>
+		  </div>
+
 	        </div>
 	      </div>
 	    </div>
